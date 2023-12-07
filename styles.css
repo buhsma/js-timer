@@ -1,0 +1,189 @@
+/* html * {
+    transform: translateY(20px);
+} */
+
+.timerBtn{
+    width: 80px;
+    height: 30px;
+    border: 3px solid;
+    border-radius: 12px;
+    background-color: rgb(0, 99, 99);
+    color: white;
+    cursor: pointer;
+    font-family: consolas, monospace;
+}
+
+#stopWatchDisplay, #countdownDisplay {
+    font-size: 75px;
+    color: chartreuse;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#stopWatch, #countdown, #analog  {
+    text-align: center;
+    border-radius: 25px;
+    background-color: #222222;
+}
+#countdown {
+    text-align: center;
+}
+
+label, input {
+    display: block;
+    margin: 5px auto; /* Adjust the margin as needed */
+}
+
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+
+#stopWatch {background: linear-gradient(to bottom, red, rgb(128, 0, 0));;}
+#countdown {background: linear-gradient(to bottom, green, rgb(0, 50, 0));;}
+#analog {background: linear-gradient(to bottom, blue, rgb(0, 0, 100));;}
+
+
+
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 30%;
+}
+
+#tablinkContainerBig{
+    display: flex;
+    flex-direction: column;
+}
+
+#tablinkContainer {
+    /* margin-left: 30px; */
+    /* transform: translateY(-1px); */
+    display: flex;
+    justify-content: center;
+}
+
+#leftTab{
+    border-top-left-radius: 20px;
+}
+
+#rightTab {
+    border-top-right-radius: 20px;
+}
+
+/* #countdown {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+} */
+
+/* .clockBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+} */
+
+.clock {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 50%;
+    border: 3px solid black;
+    position: relative;
+    box-shadow: 5px 5px 5px #3b3b3b;   
+    margin-left: 50%;
+    transform: translateX(-50%)
+}
+
+.clock .number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation)); 
+    font-size: 1.5rem;
+    color: black;
+}
+
+.clock .number1 { --rotation: 30deg; }
+.clock .number2 { --rotation: 60deg; }
+.clock .number3 { --rotation: 90deg; }
+.clock .number4 { --rotation: 120deg; }
+.clock .number5 { --rotation: 150deg; }
+.clock .number6 { --rotation: 180deg; }
+.clock .number7 { --rotation: 210deg; }
+.clock .number8 { --rotation: 240deg; }
+.clock .number9 { --rotation: 270deg; }
+.clock .number10 { --rotation: 300deg; }
+.clock .number11 { --rotation: 330deg; }
+
+.clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clock .hand.second {
+    width: 2px;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .hand.minute {
+    width: 7px;
+    height: 40%;
+    background-color: black;
+}
+
+.clock .hand.hour {
+    width: 10px;
+    height: 35%;
+    background-color: black;
+} 
+
+.clock {
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: antialiased;  
+}
+
+@keyframes alarmAnimation {
+    0% {background-color: #ff0000;}
+    50% {background-color: #ffcc00;}
+    100% {background-color: #ff0000;}
+  }
+  
+  .alarm-animation {
+    animation: alarmAnimation 1s infinite;
+  }
+  
